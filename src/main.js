@@ -1,8 +1,5 @@
 import {createApp} from "vue";
 import { initializeApp } from "firebase/app";
-import {getDatabase, connectDatabaseEmulator} from "firebase/database";
-import {getAuth, connectAuthEmulator} from "firebase/auth"
-import {getFunctions, connectFunctionsEmulator} from "firebase/functions"
 import App from "@/App";
 
 const firebaseConfig = {
@@ -16,14 +13,6 @@ const firebaseConfig = {
     measurementId: "G-G30HVVYYEH"
 };
 
-const app = initializeApp(firebaseConfig);
-
-const db = getDatabase(app);
-const auth = getAuth(app);
-const functions = getFunctions(app);
-
-connectDatabaseEmulator(db, "localhost", 9000);
-connectAuthEmulator(auth, "localhost");
-connectFunctionsEmulator(functions, "localhost", 5001);
+initializeApp(firebaseConfig);
 
 createApp(App).mount("#app")
