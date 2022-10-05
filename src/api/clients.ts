@@ -4,6 +4,7 @@ import {getAuth, createUserWithEmailAndPassword} from "firebase/auth"
 const auth = getAuth();
 const db = getDatabase();
 
+
 export function createClient(email, password){
     return createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -28,3 +29,5 @@ export function deleteClient(uid){
     return remove(ref(db, "clients/" + uid))
         .then(() => {return "utilisateur supprimé"});
 }
+
+

@@ -1,15 +1,18 @@
 <template>
   <img class="logo-app" alt="Save-farmer logo" src="./assets/save-farmer-logo.png">
   <HelloWorld msg="Bienvenue sur votre application"/>
+  <AddClient/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import AddClient from './components/AddClient.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    AddClient
   }
 }
 </script>
